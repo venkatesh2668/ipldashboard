@@ -1,7 +1,8 @@
+// Write your code here
 import {Component} from 'react'
-
+import Loader from 'react-loader-spinner'
 import TeamCard from '../TeamCard'
-
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 import './index.css'
 
@@ -52,8 +53,8 @@ class Home extends Component {
           </div>
 
           {isLoading ? (
-            <div>
-              <h1>loading.....</h1>
+            <div data-testid="loader">
+              <Loader type="Oval" color="#ffffff" height={50} width={50} />
             </div>
           ) : (
             this.getMatchCards()
@@ -65,3 +66,4 @@ class Home extends Component {
 }
 
 export default Home
+

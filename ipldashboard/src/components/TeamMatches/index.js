@@ -1,8 +1,10 @@
+// Write your code here
 import {Component} from 'react'
-
+import Loader from 'react-loader-spinner'
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
 
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './index.css'
 
 class TeamMatches extends Component {
@@ -86,9 +88,9 @@ class TeamMatches extends Component {
     return (
       <div className={`team-matches-bg-container ${bgColorClassName}`}>
         {isLoading ? (
-          <div>
-            <h1>loading.....</h1>
-            </div>
+          <div data-testid="loader">
+            <Loader type="Oval" color="#ffffff" height={50} width={50} />
+          </div>
         ) : (
           this.renderTeamMatchDetails()
         )}
