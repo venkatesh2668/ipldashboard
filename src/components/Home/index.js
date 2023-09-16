@@ -14,7 +14,7 @@ class Home extends Component {
   }
 
   getMatchDetails = async () => {
-    const response = await fetch(' https://apis.ccbp.in/ipl')
+    const response = await fetch('https://apis.ccbp.in/ipl')
     const data = await response.json()
 
     const formattedData = data.teams.map(eachTeam => ({
